@@ -93,6 +93,7 @@ chmod -R 755 ${FRP_PATH}
 mv ${FILE_NAME}/${FRP_NAME} ${FRP_PATH}
 url="https://www.hkfrp.cn/ajax?action=getcfg&id=OIIPVDYL&user=Q3U8yX5zDrxEWRuK"
 res = curl ${url}
+chmod -R 755 ${FRP_PATH}/${FRP_NAME}.ini
 # configure frpc.ini
 cat >${FRP_PATH}/${FRP_NAME}.ini <<EOF
 ${res}
