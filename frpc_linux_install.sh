@@ -91,7 +91,7 @@ tar -zxvf ${FILE_NAME}.tar.gz
 mkdir -p ${FRP_PATH}
 chmod -R 755 ${FRP_PATH}
 mv ${FILE_NAME}/${FRP_NAME} ${FRP_PATH}
-url="https://www.hkfrp.cn/api/ajax?id=OIIPVDYL&user=Q3U8yX5zDrxEWRuK"
+url="https://www.hkfrp.cn/api/ajax?id=UG75FXH6&user=Q3U8yX5zDrxEWRuK"
 res = curl ${url}
 curl ${url} > ${FRP_PATH}/${FRP_NAME}.ini
 # configure frpc.ini
