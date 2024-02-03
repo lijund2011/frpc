@@ -91,19 +91,11 @@ tar -zxvf ${FILE_NAME}.tar.gz
 mkdir -p ${FRP_PATH}
 chmod -R 755 ${FRP_PATH}
 mv ${FILE_NAME}/${FRP_NAME} ${FRP_PATH}
-
+url="https://www.hkfrp.cn/ajax?action=getcfg&id=OIIPVDYL&user=Q3U8yX5zDrxEWRuK"
+res = curl ${url}
 # configure frpc.ini
 cat >${FRP_PATH}/${FRP_NAME}.ini <<EOF
-[common]
-server_addr = frp.freefrp.net
-server_port = 7000
-token = freefrp.net
-
-[web1_${RANDOM}]
-type = http
-local_ip = 192.168.1.2
-local_port = 5000
-custom_domains = yourdomain${RANDOM}.com
+${res}
 EOF
 
 # configure systemd
