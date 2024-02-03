@@ -89,6 +89,7 @@ fi
 tar -zxvf ${FILE_NAME}.tar.gz
 
 mkdir -p ${FRP_PATH}
+chmod -R 755 ${FRP_PATH}
 mv ${FILE_NAME}/${FRP_NAME} ${FRP_PATH}
 
 # configure frpc.ini
