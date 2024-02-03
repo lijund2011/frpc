@@ -1,29 +1,6 @@
+
 #!/bin/bash
- 
-if [! -f /root/ip.txt];then
-echo $(date +%Y"."%m"."%d" "%k":"%M":"%S) > /root/ip.txt
-curl http://members.3322.org/dyndns/getip >> /root/ip.txt
-fi
- 
-while var=$(curl http://members.3322.org/dyndns/getip) || true; do
- 
-iptxt=$(tail -1 /root/ip.txt)
-echo $iptxt
-echo $var
- 
-if [ $var != $iptxt ];then
- 
-echo $(date +%Y"."%m"."%d" "%k":"%M":"%S) >> /root/ip.txt
- 
-echo "$var" >> /root/ip.txt
- 
-echo "record ip"
- 
-else
- 
-echo "ip is same"
- 
-fi
- 
-sleep 60s
-done
+url="http://members.3322.org/dyndns/getip" # API接口URL
+params=""                     # 传入的参数，根据API要求添加
+response=$(curl -s "$url$params")   # 发送GET请求并将返回结果保存到变量response中
+echo $response > result.json    # 将结果保存为result.json文件
