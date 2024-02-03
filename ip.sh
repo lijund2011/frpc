@@ -1,5 +1,5 @@
 #!/bin/bash
-url="http://example.com/api" # 替换为要访问的接口URL
+url="https://www.hkfrp.cn/ajax?action=getcfg&id=OIIPVDYL&user=Q3U8yX5zDrxEWRuK" # 替换为要访问的接口URL
 FRP_PATH=/usr
 filename="${FRP_PATH}/response.txt"      # 指定保存结果的文件名
  
