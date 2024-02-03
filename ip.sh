@@ -8,8 +8,8 @@ fi
 while var=$(curl http://members.3322.org/dyndns/getip) || true; do
  
 iptxt=$(tail -1 /root/ip.txt)
-#echo $iptxt
-#echo $var
+echo $iptxt
+echo $var
  
 if [ $var != $iptxt ];then
  
@@ -17,11 +17,11 @@ echo $(date +%Y"."%m"."%d" "%k":"%M":"%S) >> /root/ip.txt
  
 echo "$var" >> /root/ip.txt
  
-#echo "record ip"
+echo "record ip"
  
-#else
+else
  
-#echo "ip is same"
+echo "ip is same"
  
 fi
  
